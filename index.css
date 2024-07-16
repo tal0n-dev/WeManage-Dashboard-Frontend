@@ -25,6 +25,7 @@ body {
     display: flex;
     align-items: center;
     min-height: 64px;
+    max-height: 64px;
 }
 
 .navbar-context {
@@ -69,7 +70,7 @@ body {
     height: 32px;
     object-fit: cover;
 } */
-.placeholder {
+/* .placeholder {
     position: relative;
     opacity: 0.3;
     z-index: 0;
@@ -104,7 +105,43 @@ body {
     align-items: flex-start;
     justify-content: flex-start;
     padding: 6px 12px;
+} */
+
+
+.navbar-search {
+    position: relative;
+    width: 388px;
 }
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+}
+
+.search-input {
+    width: 100%;
+    height: 32px;
+    border-radius: 10px;
+    background-color: #141414;
+    border: 0.6px solid rgba(239, 239, 239, 0.2);
+    box-sizing: border-box;
+    padding: 6px 12px 6px 38px;
+    color: #efefef;
+    font-family: 'Work Sans';
+    font-size: 14px;
+}
+
+.search-input::placeholder {
+    color: rgba(239, 239, 239, 0.3);
+}
+
+
+
 
 .notification-icon {
     width: 20px;
@@ -112,13 +149,17 @@ body {
     height: 20px;
 }
 .notification {
+    position: relative;
     border-radius: 5px;
     border: 0.6px solid rgba(239, 239, 239, 0.2);
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    padding: 5px;
+    justify-content: center;
+    padding: 6px;
 }
 .useravatar {
     width: 32px;
@@ -138,7 +179,7 @@ body {
     gap: 20px;
 } */
 
-.home-text {
+/* .home-text {
     position: relative;
     font-weight: 500;
 }
@@ -229,7 +270,119 @@ body {
     width: 240.6px;
     overflow: hidden;
     color: #555;
+} */
+
+
+.side-bar {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 240px;
+    height: calc(100vh - 64px);
+    background-color: #1a1a1a;
+    border-right: 0.6px solid rgba(239, 239, 239, 0.2);
+    color: #efefef;
+    font-family: 'Work Sans';
+    overflow-y: auto;
+}
+
+.main-text {
+    padding: 24px 24px 16px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: rgba(239, 239, 239, 0.6);
+}
+
+.sidebar-list {
+    padding: 0 8px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    margin-bottom: 4px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #efefef;
+    transition: 0.3s;
+    opacity: 0.40;
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+    background-color: #141414;
+    opacity: 1;
+}
+
+.sidebar-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
 }
 
 
+.sidebar-item.boards {
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.boards-header {
+    position: relative;  /* Add this to make it a positioning context for the arrow */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.4s;
+}
+
+.arrow-icon {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.boards.active .arrow-icon {
+    transform: translateY(-50%) rotate(180deg);  /* Keep translateY at -50% */
+}
+
+.boards-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    width: 100%;
+    transition: max-height 0.3s ease-out, opacity 0.2s ease-out, margin-top 0.3s ease-out;
+    margin-top: 0;
+}
+
+.boards.active .boards-content {
+    display: block;
+    max-height: 300px; /* Adjust this value based on your content */
+    opacity: 1;
+    margin-top: 12px;
+}
+
+.board-option {
+    display: block;
+    padding: 6px 16px 6px 12px;
+    color: #efefef;
+    text-decoration: none;
+    transition: background-color 0.3s, opacity 0.2s;
+    opacity: 0;
+}
+
+.boards.active .board-option {
+    opacity: 1;
+    transition-delay: 0.1s; /* Slight delay for a staggered effect */
+}
+
+.board-option:hover {
+    background-color: #141414;
+}
 
