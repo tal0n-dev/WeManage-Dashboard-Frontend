@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+
+.main {
+    width: 100%;
+    position: fixed;
+    background-color: #141414;
+    height: 1024px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 14px;
+    color: #efefef;
+    font-family: 'Work Sans';
+}
+.nav-bar {
+    position: relative;
+    width: 100%;
+    background-color: #1a1a1a;
+    border-bottom: 0.6px solid rgba(239, 239, 239, 0.2);
+    box-sizing: border-box;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+}
+
+.navbar-context {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo-icon {
+    width: 153px;
+    height: 32px;
+    object-fit: cover;
+}
+
+.context-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/* .nav-bar {
+    position: relative;
+    width: 100%;
+    background-color: #1a1a1a;
+    border-bottom: 0.6px solid rgba(239, 239, 239, 0.2);
+    box-sizing: border-box;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-context {
+    position: relative;
+    width: auto;
+}
+
+.logo-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 153px;
+    height: 32px;
+    object-fit: cover;
+} */
+.placeholder {
+    position: relative;
+    opacity: 0.3;
+    z-index: 0;
+}
+.search-icon {
+    width: 20px;
+    position: absolute;
+    margin: 0 !important;
+    top: 0px;
+    left: 0px;
+    height: 20px;
+    z-index: 1;
+}
+.navbar-search-context {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2px 0px 2px 28px;
+    position: relative;
+    gap: 8px;
+}
+.navbar-search {
+    width: 388px;
+    height: 32px;
+    border-radius: 10px;
+    background-color: #141414;
+    border: 0.6px solid rgba(239, 239, 239, 0.2);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 6px 12px;
+}
+
+.notification-icon {
+    width: 20px;
+    position: relative;
+    height: 20px;
+}
+.notification {
+    border-radius: 5px;
+    border: 0.6px solid rgba(239, 239, 239, 0.2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
+}
+.useravatar {
+    width: 32px;
+    position: relative;
+    border-radius: 50%;
+    background-color: #8d8d8d;
+    height: 32px;
+}
+/* .context-right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+} */
+
+.home-text {
+    position: relative;
+    font-weight: 500;
+}
+.home {
+    align-self: stretch;
+    border-radius: 10px;
+    background-color: rgba(20, 20, 20, 0);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 0px 10px 16px;
+    gap: 8px;
+    opacity: 0.25;
+}
+.vuesaxlineararrow-down-icon {
+    width: 16px;
+    position: absolute;
+    margin: 0 !important;
+    top: 12px;
+    right: 16px;
+    height: 16px;
+    z-index: 0;
+}
+.boards-icon {
+    width: 20px;
+    position: relative;
+    height: 20px;
+    z-index: 1;
+}
+.boards-text {
+    position: relative;
+    font-weight: 500;
+    z-index: 2;
+}
+.boards-accordion {
+    align-self: stretch;
+    border-radius: 10px;
+    background-color: #141414;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 16px;
+    position: relative;
+    gap: 8px;
+    color: #ebf7fb;
+}
+.sidebar-list {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 224px;
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+}
+.sidebar-context {
+    position: absolute;
+    top: 136px;
+    left: 8px;
+    width: 224px;
+    height: 84px;
+}
+.main-text {
+    position: absolute;
+    top: 117px;
+    left: 24px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: rgba(239, 239, 239, 0.6);
+}
+.side-bar {
+    position: absolute;
+    height: calc(100% - 64px);
+    top: 65px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #1a1a1a;
+    border-right: 0.6px solid rgba(239, 239, 239, 0.2);
+    box-sizing: border-box;
+    width: 240.6px;
+    overflow: hidden;
+    color: #555;
+}
+
+
+
