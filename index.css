@@ -369,7 +369,8 @@ body {
 }
 
 .board-option {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 6px 16px 6px 12px;
     color: #efefef;
     text-decoration: none;
@@ -378,11 +379,43 @@ body {
 }
 
 .boards.active .board-option {
+    opacity: 0.3;
+}
+.boards.active .board-option:hover {
     opacity: 1;
-    transition-delay: 0.1s; /* Slight delay for a staggered effect */
 }
 
 .board-option:hover {
-    background-color: #141414;
+    opacity: 1; 
+    background-color: rgba(235, 247, 251, 0.2);
+    border-radius: 6px;
 }
 
+.board-option .sidebar-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.board-option.add-new {
+    opacity: 0.3;
+}
+
+.board-option.add-new:hover {
+    opacity: 1;
+    background-color: rgba(235, 247, 251, 0.2);
+    border-radius: 6px;
+}
+
+.board-option input {
+    background: none;
+    border: none;
+    color: #efefef;
+    font-family: 'Work Sans';
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+}
+.board-option.add-new:focus {
+   opacity: 1;
+}
