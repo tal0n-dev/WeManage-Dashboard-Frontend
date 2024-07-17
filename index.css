@@ -110,7 +110,7 @@ body {
 
 .navbar-search {
     position: relative;
-    width: 388px;
+    width: 324px;
 }
 
 .search-icon {
@@ -157,11 +157,10 @@ body {
     justify-content: center;
     padding: 6px;
     cursor: pointer;
-    
+    transition: background-color 0.4s;
 }
 .notification:hover {
     background-color: rgba(235, 247, 251, 0.2);
-    transition: transform 0.4s;
 }
 .useravatar {
     width: 32px;
@@ -289,7 +288,7 @@ body {
 }
 
 .main-text {
-    margin-top: 132px;
+    margin-top: 32px;
     padding: 0px 24px 4px;
     font-size: 13px;
     letter-spacing: 0.03em;
@@ -384,7 +383,7 @@ body {
 }
 
 .board-option .sidebar-icon {
-    width: 16px;
+    width: 16px; 
     height: 16px;
     margin-right: 8px;
 }
@@ -397,7 +396,9 @@ body {
     opacity: 1;
     background-color: rgba(235, 247, 251, 0.2);
 }
-
+.board-option.add-new:active {
+    background: #1A1A1A;
+}
 .board-option input {
     background: none;
     border: none;
@@ -406,7 +407,21 @@ body {
     font-size: 14px;
     width: 100%;
     outline: none;
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+    height: auto;
+}
+.board-option span,
+.board-option input {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2;
 }
 .board-option.add-new:focus {
    opacity: 1;
+}
+.team-section {
+    margin-top: auto;
+ 
 }
