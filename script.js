@@ -3,7 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const boardsHeader = boardsItem.querySelector('.boards-header');
     const boardsContent = boardsItem.querySelector('.boards-content');
     const addNewButton = boardsContent.querySelector('.add-new');
-
+    function updateDashboardSummary(total, completed, pending) {
+        document.querySelector('.summary-card:nth-child(1) .summary-number').textContent = total;
+        document.querySelector('.summary-card:nth-child(2) .summary-number').textContent = completed;
+        document.querySelector('.summary-card:nth-child(3) .summary-number').textContent = pending;
+    }
+    
+    // Example usage:
+    // updateDashboardSummary(30, 22, 8);
     boardsHeader.addEventListener('click', function() {
         boardsItem.classList.toggle('active');
     });

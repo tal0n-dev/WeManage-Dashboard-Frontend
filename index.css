@@ -121,6 +121,7 @@ body {
     width: 20px;
     height: 20px;
     z-index: 1;
+    opacity: 0.3;
 }
 
 .search-input {
@@ -134,8 +135,15 @@ body {
     color: #efefef;
     font-family: 'Work Sans';
     font-size: 14px;
+    outline: none;
+    transition: border 0.4s;
 }
-
+.search-input:hover {
+    border: 0.6px solid rgba(239, 239, 239, 1);
+}
+.search-input:focus {
+    border: 0.6px solid rgba(239, 239, 239, 1);
+}
 .search-input::placeholder {
     color: rgba(239, 239, 239, 0.3);
 }
@@ -169,111 +177,6 @@ body {
     background-color: #8d8d8d;
     height: 32px;
 }
-/* .context-right {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 20px;
-} */
-
-/* .home-text {
-    position: relative;
-    font-weight: 500;
-}
-.home {
-    align-self: stretch;
-    border-radius: 10px;
-    background-color: rgba(20, 20, 20, 0);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px 0px 10px 16px;
-    gap: 8px;
-    opacity: 0.25;
-}
-.vuesaxlineararrow-down-icon {
-    width: 16px;
-    position: absolute;
-    margin: 0 !important;
-    top: 12px;
-    right: 16px;
-    height: 16px;
-    z-index: 0;
-}
-.boards-icon {
-    width: 20px;
-    position: relative;
-    height: 20px;
-    z-index: 1;
-}
-.boards-text {
-    position: relative;
-    font-weight: 500;
-    z-index: 2;
-}
-.boards-accordion {
-    align-self: stretch;
-    border-radius: 10px;
-    background-color: #141414;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 10px 16px;
-    position: relative;
-    gap: 8px;
-    color: #ebf7fb;
-}
-.sidebar-list {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 224px;
-    height: 84px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 4px;
-}
-.sidebar-context {
-    position: absolute;
-    top: 136px;
-    left: 8px;
-    width: 224px;
-    height: 84px;
-}
-.main-text {
-    position: absolute;
-    top: 117px;
-    left: 24px;
-    font-size: 13px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: rgba(239, 239, 239, 0.6);
-}
-.side-bar {
-    position: absolute;
-    height: calc(100% - 64px);
-    top: 65px;
-    bottom: 0px;
-    left: 0px;
-    background-color: #1a1a1a;
-    border-right: 0.6px solid rgba(239, 239, 239, 0.2);
-    box-sizing: border-box;
-    width: 240.6px;
-    overflow: hidden;
-    color: #555;
-} */
-
-
 .side-bar {
     position: fixed;
     top: 64px;
@@ -284,16 +187,35 @@ body {
     border-right: 0.6px solid rgba(239, 239, 239, 0.2);
     color: #efefef;
     font-family: 'Work Sans';
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
-
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.main-menu {
+    flex-grow: 1;
+    overflow-y: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    max-height: 456px;
+}
+.main-menu::-webkit-scrollbar {
+    display: none;
+}
 .main-text {
-    margin-top: 32px;
+    margin-top: 24px;
     padding: 0px 24px 4px;
     font-size: 13px;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: rgba(239, 239, 239, 0.6);
+}
+.team-section {
+    margin-top: 0;
+    padding-bottom: 20px;
 }
 .sidebar-list {
     padding: 0 8px;
@@ -346,15 +268,17 @@ body {
 }
 .boards-content {
     max-height: 0;
-    overflow: hidden;
+    overflow: auto;
     opacity: 0;
     width: 100%;
     transition: max-height 0.3s ease-out, opacity 0.2s ease-out, margin-top 0.3s ease-out;
     margin-top: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 .boards.active .boards-content {
     display: block;
-    max-height: 300px;
+    max-height: 116px;
     opacity: 1;
     margin-top: 12px;
 }
@@ -421,7 +345,38 @@ body {
 .board-option.add-new:focus {
    opacity: 1;
 }
-.team-section {
-    margin-top: auto;
- 
+
+/* main content area */
+/* .main-content {
+    margin-left: 240px;
+    padding: 20px;
+    color: #efefef;
 }
+
+.page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.dashboard-summary {
+    display: flex;
+    gap: 20px;
+}
+
+.summary-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    flex: 1;
+}
+
+.summary-card h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.summary-number {
+    font-size: 36px;
+    font-weight: bold;
+} */
+ /* main content area */
