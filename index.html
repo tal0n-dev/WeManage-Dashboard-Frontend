@@ -5,6 +5,9 @@
   	<meta name="viewport" content="initial-scale=1, width=device-width">
   	
   	<link rel="stylesheet"  href="./index.css" />
+	<link rel="stylesheet"  href="./maincontent.css" />
+	<link rel="stylesheet"  href="./card.css" />
+	<link rel="stylesheet"  href="./form.css" />
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work Sans:wght@400;500&display=swap" />
   	
   	
@@ -12,6 +15,7 @@
 </head>
 <body>
   	<div class="main">
+			<!-- Nav Bar -->
     		<div class="nav-bar">
       			<div class="navbar-context">
         				<img class="logo-icon" alt="" src="assets/Logo.png">
@@ -43,6 +47,7 @@
         				</div>
       			</div>
     		</div>
+			<!-- Side Bar -->
 			<div class="side-bar" >
 				<div class="sidebar-content">
 					<div class="main-menu">
@@ -213,24 +218,51 @@
 					</div>
 				</div>
 			</div>
-		<!-- <div class="main-content">
-			<h1 class="page-title">Dashboard</h1>
-			<div class="dashboard-summary">
-				<div class="summary-card">
-					<h2>Total Tasks</h2>
-					<p class="summary-number">24</p>
+			<!-- Main Content Area -->
+		<div class="main-content">
+            <div class="to-do-list">
+                <div class="todo-header">
+                    <div class="todo-label">
+                        <div class="label-color"></div>
+                        <div class="to-do-text">To Do</div>
+                        <div class="cards-counter">
+                            <div class="cards-number">0</div>
+                        </div>
+						
+                    </div>
+                    <div class="add-icon-parent">
+                        <svg class="add-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 8H12" stroke="#EBF7FB" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 12V4" stroke="#EBF7FB" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+						<svg class="delete-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M14 3.98665C11.78 3.76665 9.54667 3.65332 7.32 3.65332C6 3.65332 4.68 3.71999 3.36 3.85332L2 3.98665" stroke="#EBF7FB" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M5.66699 3.31331L5.81366 2.43998C5.92033 1.80665 6.00033 1.33331 7.12699 1.33331H8.87366C10.0003 1.33331 10.087 1.83331 10.187 2.44665L10.3337 3.31331" stroke="#EBF7FB" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M12.5669 6.09332L12.1336 12.8067C12.0603 13.8533 12.0003 14.6667 10.1403 14.6667H5.86026C4.00026 14.6667 3.94026 13.8533 3.86693 12.8067L3.43359 6.09332" stroke="#EBF7FB" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M6.88672 11H9.10672" stroke="#EBF7FB" stroke-linecap="round" stroke-linejoin="round"/>
+							<path d="M6.33301 8.33331H9.66634" stroke="#EBF7FB" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+                    </div>
+                </div>
+				<svg class="header-divider" width="258" height="2" viewBox="0 0 258 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path opacity="0.4" d="M1 1L257 1" stroke="#EBF7FB" stroke-linecap="round"/>
+				</svg>
+                <div class="card-container">
+                </div>
+				<svg class="footer-divider" width="258" height="2" viewBox="0 0 258 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path opacity="0.4" d="M1 1L257 1" stroke="#EBF7FB" stroke-linecap="round"/>
+				</svg>
+				<div class="add-new-button" id="addNewButton">
+					<svg class="add-icon-input" alt="Add" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 8H12" stroke="#EBF7FB" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M8 12V4" stroke="#EBF7FB" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+					<div class="add-new">Add new</div>
 				</div>
-				<div class="summary-card">
-					<h2>Completed Tasks</h2>
-					<p class="summary-number">18</p>
-				</div>
-				<div class="summary-card">
-					<h2>Pending Tasks</h2>
-					<p class="summary-number">6</p>
-				</div>
-			</div>
-		</div> -->
+            </div>
+        </div>
   	</div>
   	<script src="script.js"></script>
+	<script src="maincontent.js"></script>
 </body>
 </html>
