@@ -141,7 +141,7 @@ body {
 }
 .main-menu {
     flex-grow: 1;
-    overflow-y: hidden;
+    overflow-y: auto;
     -ms-overflow-style: none;
     scrollbar-width: none;
     max-height: 375px;
