@@ -3,27 +3,113 @@
     width: calc(100% - 240px);
     position: relative;
     height: calc(100vh - 64px);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     text-align: left;
     font-size: 14px;
     color: #fff;
     font-family: 'Work Sans';
 }
+.board-header {
+    margin-left: 1px;
+    width: auto;
+    padding: 16px 24px;
+    margin-bottom: 16px;
+}
+
+.board-breadcrumb {
+    font-size: 14px;
+    color: #8D8D8D;
+    margin-bottom: 12px;
+}
+
+.board-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.board-title {
+    position: relative;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Work Sans';
+    color: #fff;
+    text-align: left;
+    margin: 0;
+}
+
+.board-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.new-list-button {
+    background-color: #3e43fb;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-family: 'Work Sans';
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.new-list-icon {
+    position: relative;
+    align-self: center;
+
+}
+.more-options-button {
+    width: 32px;
+    position: relative;
+    height: 32px;
+}
+
+.lists-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 16px; /* Add some padding to account for the scrollbar */
+    align-items: flex-start;
+    white-space: nowrap;
+    gap: 12px;
+    padding: 0px 24px 24px;
+}
+
+/* Add styles for the scrollbar */
+.lists-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.lists-container::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.lists-container::-webkit-scrollbar-thumb {
+    background: #3e3e3e;
+    border-radius: 4px;
+}
+
+.lists-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 
 .to-do-list {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 99px;
-    margin-left: 24px;
+    position: relative;
     border-radius: 12px;
     background-color: #1a1a1a;
     border: 0.6px solid rgba(239, 239, 239, 0.2);
     box-sizing: border-box;
     width: 276px;
+    min-width: 276px;
     height: auto;
     max-height: 80vh;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .todo-header {
@@ -40,7 +126,7 @@
 }
 
 .label-color {
-    width: 2px;
+    width: 3px;
     height: 14px;
     border-radius: 0px 99px 99px 0px;
     background-color: #e74c3c;

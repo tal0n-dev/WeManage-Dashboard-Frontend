@@ -1,13 +1,16 @@
 .card-container {
     flex-grow: 1;
+    height: auto;
     overflow-y: auto;
     padding: 12px 12px 0px;
     display: flex;
     flex-direction: column;
     position: relative;
-    min-height: 120px;
+    align-items: center;
 }
-
+.empty-state {
+    margin-bottom: 8px;
+}
 .cardheader-parent {
     width: 100%;
     position: relative;
