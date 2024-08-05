@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function createNewList(name, color) {
         console.log(`Creating new list: ${name} with color ${color}`);
-        // Add your logic here to create and display the new list
+
         const newList = document.createElement('div');
         newList.className = 'to-do-list';
         newList.innerHTML = `
