@@ -115,6 +115,7 @@
     width: 36px;
     height: 36px;
     border-radius: 8px;
+    background-color: #3e43fb20;
     border: 0.6px solid #3e43fb;
     box-sizing: border-box;
     display: flex;
@@ -122,6 +123,11 @@
     align-items: center;
     justify-content: center;
     padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.add-label-button-frame:hover {
+    background-color: #3e43fb40;
 }
 .selection-frame {
     align-self: stretch;
@@ -156,7 +162,6 @@
     justify-content: flex-start;
     gap: 6px;
     width: 100%;
-    margin-top: 8px;
 }
 .content-frame {
     align-self: stretch;
@@ -182,6 +187,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 8px 18px;
+    cursor: pointer;
 }
 .cancel-button-area {
     border-radius: 12px;
@@ -205,6 +211,7 @@
     align-items: center;
     justify-content: center;
     padding: 8px 18px;
+    cursor: pointer;
 }
 .add-labels-button-area {
     border-radius: 8px;
@@ -251,7 +258,7 @@
 
 .colors-dropdown {
     position: absolute;
-    top: 49%;
+    margin-top: 40%;
     right: 16px;
     border-radius: 8px;
     background-color: #141414;
@@ -308,11 +315,18 @@
     font-family: 'Work Sans';
 }
 
+.remove-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
 .remove-label-icon {
     width: 14px;
     height: 14px;
-    flex-shrink: 0;
-    cursor: pointer;
 }
 
 .card-label {
@@ -329,5 +343,4 @@
     font-size: 12px;
     font-family: 'Work Sans';
     cursor: pointer;
-    margin-bottom: 4px;
 }

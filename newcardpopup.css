@@ -65,6 +65,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 6px;
+    cursor: pointer;
 }
 .x-icon {
     margin: 0 !important;
@@ -231,6 +232,7 @@
     justify-content: flex-start;
     padding: 2px 8px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 .labels-container {
     align-self: stretch;
@@ -378,6 +380,7 @@
     justify-content: center;
     padding: 8px 18px;
 }
+
 .new-card-popup-add-card-button {
     border-radius: 8px;
     display: flex;
@@ -392,6 +395,40 @@
     justify-content: flex-start;
     gap: 12px;
 }
+/* Delete card buttong */
+.delete-card-popup-button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.delete-card-button-base {
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    border: 0.6px solid transparent;
+    background-color: #e74d3c10;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    gap: 4px;
+    cursor: pointer;
+    transition: background-color, border 0.3s;
+}
+.delete-card-button-base:hover {
+    background-color: #e74d3c30;
+    border: 0.6px solid #e74d3c;
+}
+.delete-card-button-label {
+    position: relative;
+    line-height: 20px;
+    font-weight: 500;
+    color: #E74C3C;
+}
+/*  */
 .new-card-popup-actions {
     position: absolute;
     top: 48px;
@@ -400,7 +437,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: flex-end;
+    justify-content: space-between; /*change this to space-between*/
     padding: 0px 24px 24px;
     box-sizing: border-box;
 }

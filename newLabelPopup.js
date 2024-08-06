@@ -1,5 +1,3 @@
-// newLabelPopup.js
-
 window.showNewLabelPopup = function(cardPopup) {
     const labelPopup = createNewLabelPopup();
     cardPopup.appendChild(labelPopup);
@@ -89,21 +87,25 @@ window.showNewLabelPopup = function(cardPopup) {
         availableLabels.forEach(label => {
             const labelElement = createLabelElement(label);
             availableLabelsArea.appendChild(labelElement);
-            
-            labelElement.addEventListener('click', function() {
-                if (!cardLabels.some(l => l.name === label.name)) {
-                    cardLabels.push(label);
-                    updateCardLabels();
-                }
-            });
+        });
 
-            const removeIcon = labelElement.querySelector('.remove-label-icon');
-            removeIcon.addEventListener('click', function(e) {
-                e.stopPropagation();
-                availableLabels = availableLabels.filter(l => l.name !== label.name);
-                localStorage.setItem('availableLabels', JSON.stringify(availableLabels));
-                updateAvailableLabels();
-            });
+        // Use event delegation for available labels
+        availableLabelsArea.addEventListener('click', function(e) {
+            const labelElement = e.target.closest('.card-label');
+            if (labelElement) {
+                const labelName = labelElement.querySelector('.card-label-text').textContent;
+                if (e.target.closest('.remove-icon-wrapper')) {
+                    availableLabels = availableLabels.filter(l => l.name !== labelName);
+                    localStorage.setItem('availableLabels', JSON.stringify(availableLabels));
+                    updateAvailableLabels();
+                } else {
+                    if (!cardLabels.some(l => l.name === labelName)) {
+                        const label = availableLabels.find(l => l.name === labelName);
+                        cardLabels.push(label);
+                        updateCardLabels();
+                    }
+                }
+            }
         });
     }
 
@@ -112,13 +114,16 @@ window.showNewLabelPopup = function(cardPopup) {
         cardLabels.forEach(label => {
             const labelElement = createLabelElement(label);
             cardLabelsArea.appendChild(labelElement);
-            
-            const removeIcon = labelElement.querySelector('.remove-label-icon');
-            removeIcon.addEventListener('click', function(e) {
-                e.stopPropagation();
-                cardLabels = cardLabels.filter(l => l.name !== label.name);
+        });
+
+        // Use event delegation for remove icons
+        cardLabelsArea.addEventListener('click', function(e) {
+            if (e.target.closest('.remove-icon-wrapper')) {
+                const labelElement = e.target.closest('.card-label');
+                const labelName = labelElement.querySelector('.card-label-text').textContent;
+                cardLabels = cardLabels.filter(l => l.name !== labelName);
                 updateCardLabels();
-            });
+            }
         });
     }
 
@@ -138,17 +143,21 @@ window.showNewLabelPopup = function(cardPopup) {
         labelText.textContent = label.name;
         labelElement.appendChild(labelText);
 
+        const removeIconWrapper = document.createElement('div');
+        removeIconWrapper.className = 'remove-icon-wrapper';
+
         const removeIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         removeIcon.setAttribute("width", "14");
         removeIcon.setAttribute("height", "14");
         removeIcon.setAttribute("viewBox", "0 0 14 14");
         removeIcon.setAttribute("fill", "none");
         removeIcon.innerHTML = `
-            <path d="M9 3L3 9M3 3L9 9" stroke="${label.color}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.5 3.5L3.5 10.5M3.5 3.5L10.5 10.5" stroke="${label.color}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         `;
         removeIcon.className = 'remove-label-icon';
         
-        labelElement.appendChild(removeIcon);
+        removeIconWrapper.appendChild(removeIcon);
+        labelElement.appendChild(removeIconWrapper);
 
         return labelElement;
     }
@@ -203,7 +212,6 @@ function createNewLabelPopup() {
                 <div class="supporting-text">Labels help organize your cards.</div>
             </div>
             <div class="labels-input-area">
-                <div class="labels-input-area">
                     <div class="input-area">
                         <div class="input-label">Label</div>
                         <div class="selection-frame">
@@ -222,7 +230,6 @@ function createNewLabelPopup() {
                             </div>
                         </div>
                         <div class="available-labels-area"></div>
-                    </div>
                 </div>
                 
             </div>
